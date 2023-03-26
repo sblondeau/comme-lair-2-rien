@@ -1,11 +1,23 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('build/home.css')}}">
+{% endblock %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block header %}
+	<img src="{{ asset('build/images/header_compagnie.jpg')}}" alt="Les membres de la troupe">
+	<div>
+		<h1>
+			Comme l'air 2 rien
+		</h1>
+		<h2>Une compagnie de théâtre musical amateur</h2>
+	</div>
+{% endblock %}
 
 {% block body %}
-    <div class="pink-stripe">
-        <h1>
-            Comme l'air 2 rien
-        </h1>
-    </div>
+	<section></section>
 {% endblock %}

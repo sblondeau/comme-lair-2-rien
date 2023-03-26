@@ -1,10 +1,12 @@
 nav {
-    --size: 60px;
     --nav-element-spacing-vertical: 0;
     padding: var(--spacing);
     background-color: var(--primary);
     flex-wrap: wrap;
     align-items: center;
+    height: var(--navbar-size);
+    position: fixed;
+    inset: 0;
 }
 
 nav a {
@@ -12,7 +14,7 @@ nav a {
 }
 
 nav img {
-    width: var(--size);
+    width: calc(var(--navbar-size) - var(--block-spacing-vertical));
     aspect-ratio: 1;
 }
 
