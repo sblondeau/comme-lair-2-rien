@@ -1,0 +1,53 @@
+nav {
+    --size: 60px;
+    --nav-element-spacing-vertical: 0;
+    padding: var(--spacing);
+    background-color: var(--primary);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav a {
+    color: var(--light);
+}
+
+nav img {
+    width: var(--size);
+    aspect-ratio: 1;
+}
+
+nav .menu {
+    display: none;
+}
+
+nav svg {
+    width: var(--font-size-subtitle);
+    height: var(--font-size-subtitle);
+}
+
+nav .links li {
+    padding: var(--space1);
+    border-radius: var(--space1);
+}
+nav .links li:hover {
+    background-color: var(--primary-light);
+}
+
+@media screen and (width<760px) {
+    nav .menu {
+        display: initial;
+    }
+
+    nav .links {
+        display: none;
+    }
+
+    nav .links:target {
+        padding-block-start: var(--space2);
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        gap: var(--space1);
+        width: 100%;
+    }
+}

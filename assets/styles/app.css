@@ -4,20 +4,23 @@
     --primary: rgb(26, 188, 156);
     --primary-light: rgba(26, 188, 156, 0.4);
     --secondary: #943636;
-    --light:hsl(170, 33%, 96%);
-    --dark:#020f0c;
+    --light: hsl(170, 33%, 96%);
+    --dark: #020f0c;
 
-    --spacing: 0.5rem;
-    --spacing2: 1rem;
-    --spacing3: 2rem;
-    --spacing4: 4rem;
+    --space1: 0.5rem;
+    --space2: 1rem;
+    --space3: 2rem;
+    --space4: 4rem;
 
     --font-size-title: 3.6rem;
     --font-size-subtitle: 2.4rem;
     --font-size-text: 1.2rem;
 
     --font-family-title: 'Lobster Two', cursive;
-    --font-family-text: 'Roboto', sans-serif
+    --font-family-text: 'Roboto', sans-serif;
+
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -28,3 +31,9 @@ body {
     font-family: var(--font-family-title);
     color: var(--primary);
 }
+
+img {
+    width: 100%;
+}
+
+@import url('navbar.css');
