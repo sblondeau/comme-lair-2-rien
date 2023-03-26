@@ -23,5 +23,8 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@picocss/pico": "^1.5.7",
+        "install": "^0.13.0"
+    }
 }
