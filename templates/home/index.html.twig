@@ -19,5 +19,11 @@
 {% endblock %}
 
 {% block body %}
-	<section></section>
+	<section id="presentation" class="presentation">
+		<div>
+			<h1>Presentation</h1>
+			<p>{{ company.description|nl2br }}</p>
+		</div>
+		<img src="{{ asset('build/images/presentation_compagnie.jpg')}}" alt="Les membres de la troupe">
+	</section>
 {% endblock %}
