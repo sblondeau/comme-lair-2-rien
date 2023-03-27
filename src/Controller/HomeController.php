@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\CompanyRepository;
 use App\Repository\MemberRepository;
+use App\Repository\PartnerRepository;
 use App\Repository\SpectacleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,15 +17,18 @@ class HomeController extends AbstractController
         CompanyRepository $companyRepository,
         SpectacleRepository $spectacleRepository,
         MemberRepository $memberRepository,
+        PartnerRepository $partnerRepository,
     ): Response {
         $company = $companyRepository->findOneBy([]);
         $spectacles = $spectacleRepository->findAll();
         $members = $memberRepository->findBy([], ['firstName' => 'ASC']);
+        $partners = $partnerRepository->findBy([], ['name' => 'ASC']);
 
         return $this->render('home/index.html.twig', [
             'company' => $company,
             'spectacles' => $spectacles,
             'members' => $members,
+            'partners' => $partners,
         ]);
     }
 }

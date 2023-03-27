@@ -97,3 +97,18 @@ section:nth-child(even) {
     --size: calc(100% / 6);
 }
 
+.partners .grid {
+    --breakpoint: 180px;
+    --size: 0%;
+}
+.partners .grid  figure img {
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+
+.partners figcaption h2 {
+    text-align: center;
+    --color: var(--secondary);
+}

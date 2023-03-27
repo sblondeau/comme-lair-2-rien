@@ -44,4 +44,13 @@
 			{% endfor %}
 		</div>
 	</section>
+
+	<section id="partners" class="grid-section partners">
+		<h1>Partenaires</h1>
+		<div class="grid">
+			{% for partner in partners %}
+				{% include 'home/_partner.html.twig' %}
+			{% endfor %}
+		</div>
+	</section>
 {% endblock %}
