@@ -1,5 +1,8 @@
 {% for spectacle in spectacles %}
-    <article>
-        {{ spectacle.title }}
-    </article>
+	<article>
+		<h1>{{ spectacle.title }}</h1>
+		<p>{{ spectacle.description }}
+		</p>
+		<a role="button" href="#">Plus d'information</a>
+	</article>
 {% endfor %}

@@ -21,10 +21,12 @@
     --font-family-text: 'Roboto', sans-serif;
 
     --navbar-size: 100px;
+    --breakpoint: 360px;
 
     scroll-behavior: smooth;
 
 }
+
 
 body {
     padding-block-start: var(--navbar-size);
@@ -40,5 +42,7 @@ img {
     width: 100%;
     object-fit: cover;
 }
+
+
 
 @import url('navbar.css');
