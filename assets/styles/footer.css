@@ -1,0 +1,26 @@
+body>footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--breakpoint), 50%), 1fr));
+    --color: var(--light);
+
+    background-color: var(--primary);
+}
+
+body>footer h2 {
+    --color: var(--light);
+}
+
+body>footer a {
+    --color: var(--light);
+}
+
+
+footer ul li {
+    list-style-type: none;
+}
+
+footer ul li svg {
+    width: var(--font-size-text);
+    height: var(--font-size-text);
+
+}
