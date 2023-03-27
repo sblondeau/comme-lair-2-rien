@@ -122,14 +122,8 @@
     "egulias/email-validator": {
         "version": "3.1.2"
     },
-    "friendsofphp/proxy-manager-lts": {
-        "version": "v1.0.7"
-    },
     "gitonomy/gitlib": {
         "version": "v1.3.4"
-    },
-    "laminas/laminas-code": {
-        "version": "4.5.1"
     },
     "laravel/serializable-closure": {
         "version": "v1.1.1"
@@ -541,9 +535,6 @@
     },
     "symfony/property-info": {
         "version": "v6.0.7"
-    },
-    "symfony/proxy-manager-bridge": {
-        "version": "v6.0.6"
     },
     "symfony/routing": {
         "version": "6.0",
