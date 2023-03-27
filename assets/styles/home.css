@@ -73,11 +73,20 @@ section:nth-child(even) {
 }
 
 .spectacles article {
-    --block-spacing-vertical: var(--space1);
-    padding: calc(var(--block-spacing-vertical) * 3);
+    --block-spacing-vertical: var(--space1); 
+   padding: 0;
+
 }
 
 .spectacles article h1 {
     color: var(--secondary);
     font-size: calc(var(--font-size-subtitle) * 0.7);
+}
+
+.spectacles article main {
+    padding: calc(var(--block-spacing-vertical) * 3);
+}
+
+.spectacles article img {
+    max-height: 350px;
 }

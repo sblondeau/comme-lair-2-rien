@@ -30,7 +30,9 @@
 	<section id="spectacles" class="spectacles">
 		<h1>Spectacles</h1>
 		<div class="grid">
-			{% include 'home/_spectacles.html.twig' %}
+			{% for spectacle in spectacles %}
+				{% include 'home/_spectacle.html.twig' %}
+			{% endfor %}
 		</div>
 	</section>
 {% endblock %}

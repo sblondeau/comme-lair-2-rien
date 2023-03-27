@@ -1,8 +1,9 @@
-{% for spectacle in spectacles %}
-	<article>
+<article>
+	<img src="{{ spectacle.image ?? 'https://placehold.co/600x400' }}" alt="">
+	<main>
 		<h1>{{ spectacle.title }}</h1>
 		<p>{{ spectacle.description }}
 		</p>
 		<a role="button" href="#">Plus d'information</a>
-	</article>
-{% endfor %}
+	</main>
+</article>
