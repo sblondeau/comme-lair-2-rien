@@ -1,15 +1,16 @@
 /** Header **/
-body > main {
+body>main {
     --block-spacing-vertical: 0;
 }
 
-body > header {
+body>header {
     --block-spacing-vertical: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(var(--breakpoint), 50%), 1fr));
     align-items: stretch;
     padding-block: 0;
     background-color: var(--primary-light);
+    height: 100vh;
 }
 
 header img {
@@ -64,29 +65,35 @@ section:nth-child(even) {
     padding-block: var(--block-spacing-vertical);
 }
 
-
-
 /** Spectacles **/
 
-.spectacles {
+.grid-section .grid {
+    grid-template-columns: repeat(auto-fit, minmax(max(var(--breakpoint), var(--size, 25%)), 1fr));
+}
+
+.grid-section {
     padding: var(--space3);
 }
 
-.spectacles article {
-    --block-spacing-vertical: var(--space1); 
-   padding: 0;
-
+.grid-section .grid > article {
+    --block-spacing-vertical: var(--space1);
+    padding: 0;
 }
 
-.spectacles article h1 {
+.grid-section .grid > article h1 {
     color: var(--secondary);
     font-size: calc(var(--font-size-subtitle) * 0.7);
 }
 
-.spectacles article main {
+.grid-section .grid > article main {
     padding: calc(var(--block-spacing-vertical) * 3);
 }
 
-.spectacles article img {
+.grid-section .grid > article img {
     max-height: 350px;
 }
+
+.members .grid {
+    --size: calc(100% / 6);
+}
+

@@ -1,0 +1,21 @@
+<article>
+	<img src="{{ member.image ?? 'https://placehold.co/600x400' }}" alt="">
+	<main>
+		<h1>{{ member.firstName }}
+			{{ member.lastName }}</h1>
+		<a role="button" href="#member{{member.id}}">Plus d'information</a>
+	</main>
+</article>
+<dialog id="member{{member.id}}">
+	<article>
+		<header>
+			<a href="#close" aria-label="Close" class="close"></a>
+			<h2>{{  member.firstName }}
+			{{ member.lastName }}</h2>
+		</header>
+		<main>
+			<img src="{{ member.image ?? 'https://placehold.co/600x400' }}" alt="">
+			<p>{{ member.biography|nl2br }}</p>
+		</main>
+	</article>
+</dialog>
