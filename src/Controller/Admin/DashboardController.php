@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 use Symfony\Component\HttpFoundation\Response;
 use App\Controller\Admin\CompanyCrudController;
 use App\Entity\Company;
+use App\Entity\Spectacle;
 use App\Repository\CompanyRepository;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -20,22 +22,6 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        // return parent::index();
-
-        // Option 1. You can make your dashboard redirect to some common page of your backend
-        //
-        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        // return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());
-
-        // Option 2. You can make your dashboard redirect to different pages depending on the user
-        //
-        // if ('jane' === $this->getUser()->getUsername()) {
-        //     return $this->redirect('...');
-        // }
-
-        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.
-        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
-        //
         return $this->render('admin/dashboard.html.twig');
     }
 
@@ -43,7 +29,12 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Troupe', 'fa fa-users', Company::class)
-             ->setAction('edit')->setEntityId($this->companyRepository->findOneBy([])->getId());
+            ->setAction('edit')->setEntityId($this->companyRepository->findOneBy([])->getId());
+        yield MenuItem::subMenu('Spectacles', 'fa fa-masks-theater')->setSubItems([
+            MenuItem::linkToCrud('Description', 'fa fa-tags', Spectacle::class),
+            MenuItem::linkToCrud('Personnages', 'fa fa-users', Spectacle::class),
+            MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Spectacle::class),
+        ]);
     }
 
     public function configureDashboard(): Dashboard
@@ -52,7 +43,7 @@ class DashboardController extends AbstractDashboardController
             // the name visible to end users
             ->setTitle('Comme l\'Air de Rien')
             // you can include HTML contents too (e.g. to link to an image)
-            ->setTitle('<img src="{{ asset(build/images/logo.png) }}"> Comme l\'Air de Rien')
+            ->setTitle('<img src="{{ asset(\'build/images/logo.png\') }}"> Comme l\'Air de Rien')
 
             // by default EasyAdmin displays a black square as its default favicon;
             // use this method to display a custom favicon: the given path is passed
@@ -68,5 +59,10 @@ class DashboardController extends AbstractDashboardController
             // backend interface. Call this method if you prefer to disable the "dark"
             // mode for any reason (e.g. if your interface customizations are not ready for it)
             ->disableDarkMode();
+    }
+
+    public function configureAssets(): Assets
+    {
+        return Assets::new()->addWebpackEncoreEntry('admin');
     }
 }

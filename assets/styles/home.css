@@ -75,6 +75,24 @@ section:nth-child(even) {
     padding: var(--space3);
 }
 
+.grid article {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.grid-section .grid > article > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(var(--block-spacing-vertical) * 3);
+    flex-grow: 2;
+}
+
+.grid-section .grid > article > main a {
+    align-self: stretch;
+}
 .grid-section .grid > article {
     --block-spacing-vertical: var(--space1);
     padding: 0;
@@ -85,12 +103,8 @@ section:nth-child(even) {
     font-size: calc(var(--font-size-subtitle) * 0.7);
 }
 
-.grid-section .grid > article main {
-    padding: calc(var(--block-spacing-vertical) * 3);
-}
-
 .grid-section .grid > article img {
-    max-height: 350px;
+    height: 350px;
 }
 
 .members .grid {
