@@ -23,10 +23,12 @@ class SpectacleFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        foreach (self::SPECTACLES as $spectacleData) {
+        foreach (self::SPECTACLES as $key => $spectacleData) {
             $spectacle = new Spectacle();
             $spectacle->setTitle($spectacleData['title']);
             $spectacle->setDescription($spectacleData['description']);
+            $spectacle->setImage('');
+            $this->addReference('spectacle' . $key, $spectacle);
             $manager->persist($spectacle);
         }
 
