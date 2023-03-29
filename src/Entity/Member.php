@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MemberRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -36,6 +38,14 @@ class Member
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $website = null;
 
+    #[ORM\OneToMany(mappedBy: 'companyMember', targetEntity: SpectacleCharacter::class)]
+    private Collection $spectacleCharacters;
+
+    public function __construct()
+    {
+        $this->spectacleCharacters = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -63,6 +73,11 @@ class Member
         $this->lastName = $lastName;
 
         return $this;
+    }
+
+    public function getFullName(): string
+    {
+        return $this->getFirstName() . ' ' . $this->getLastName();
     }
 
     public function getBiography(): ?string
@@ -121,6 +136,36 @@ class Member
     public function setWebsite(?string $website): self
     {
         $this->website = $website;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, SpectacleCharacter>
+     */
+    public function getSpectacleCharacters(): Collection
+    {
+        return $this->spectacleCharacters;
+    }
+
+    public function addSpectacleCharacter(SpectacleCharacter $spectacleCharacter): self
+    {
+        if (!$this->spectacleCharacters->contains($spectacleCharacter)) {
+            $this->spectacleCharacters->add($spectacleCharacter);
+            $spectacleCharacter->setCompanyMember($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSpectacleCharacter(SpectacleCharacter $spectacleCharacter): self
+    {
+        if ($this->spectacleCharacters->removeElement($spectacleCharacter)) {
+            // set the owning side to null (unless already changed)
+            if ($spectacleCharacter->getCompanyMember() === $this) {
+                $spectacleCharacter->setCompanyMember(null);
+            }
+        }
 
         return $this;
     }

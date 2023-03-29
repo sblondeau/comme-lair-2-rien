@@ -2,33 +2,32 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Spectacle;
+use App\Entity\Member;
+use App\Entity\SpectacleCharacter;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class SpectacleCrudController extends AbstractCrudController
+class SpectacleCharacterCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Spectacle::class;
+        return SpectacleCharacter::class;
     }
+
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title', 'Nom du spectacle'),
+            TextField::new('name'),
             TextEditorField::new('description'),
+            AssociationField::new('companyMember', 'Membre')->setFormTypeOption('choice_label', 'fullName'),
             ImageField::new('image')
-                ->setBasePath('uploads/spectacles/')
-                ->setUploadDir('public/uploads/spectacles/')
+                ->setBasePath('uploads/characters/')
+                ->setUploadDir('public/uploads/characters/')
                 ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
-            CollectionField::new('spectacleCharacters', 'Personnages du spectacle')
-                ->allowAdd(true)
-                ->showEntryLabel(false)
-                ->useEntryCrudForm(SpectacleCharacterCrudController::class),
         ];
     }
 }
