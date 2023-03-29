@@ -1,5 +1,5 @@
 <article>
-	<img src="{{ member.image ?? 'https://placehold.co/600x400' }}" alt="">
+	<img src="{{ asset('uploads/members/' ~ member.image)  }}" alt="">
 	<main>
 		<h1>{{ member.firstName }}
 			{{ member.lastName }}</h1>
@@ -14,7 +14,7 @@
 			{{ member.lastName }}</h2>
 		</header>
 		<main>
-			<img src="{{ member.image ?? 'https://placehold.co/600x400' }}" alt="">
+			<img src="{{ asset('uploads/members/' ~ member.image)  }}" alt="">
 			<p>{{ member.biography|nl2br }}</p>
 		</main>
 	</article>

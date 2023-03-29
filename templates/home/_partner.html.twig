@@ -1,6 +1,6 @@
 <a href="{{ partner.website }}">
 	<figure>
-		<img src="{{ partner.image ?? 'https://placehold.co/600x400' }}" alt="">
+		<img src="{{ asset('uploads/partners/' ~ partner.image) }}" alt="">
 		<figcaption>
 			<h2>{{ partner.name}}</h2>
 		</figcaption>
