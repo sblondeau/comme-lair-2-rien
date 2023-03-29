@@ -1,7 +1,7 @@
 <nav>
 	<ul>
 		<li>
-			<a href="#">
+			<a href="{{ path('app_home') }}">
 				<img src="{{ asset('build/images/logo.png')}}" alt="logo"></a>
 		</li>
 	</ul>
@@ -16,16 +16,16 @@
 	</ul>
 	<ul class="links" id="links">
 		<li>
-			<a href="#presentation">Compagnie</a>
+			<a href="{{ path('app_home')}}#presentation">Compagnie</a>
+		</li>
+		<li>			
+			{{ component('spectacle') }}
 		</li>
 		<li>
-			<a href="#">Spectacles</a>
+			<a href="{{ path('app_home')}}#members">Membres</a>
 		</li>
 		<li>
-			<a href="#members">Membres</a>
-		</li>
-		<li>
-			<a href="#contact">Contact</a>
+			<a href="{{ path('app_home')}}#contact">Contact</a>
 		</li>
 	</ul>
 </nav>

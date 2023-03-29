@@ -23,7 +23,8 @@ class SpectacleCharacterCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextEditorField::new('description'),
-            AssociationField::new('companyMember', 'Membre')->setFormTypeOption('choice_label', 'fullName'),
+            AssociationField::new('companyMember', 'Membre')
+                ->setFormTypeOption('choice_label', 'fullName'),
             ImageField::new('image')
                 ->setBasePath('uploads/characters/')
                 ->setUploadDir('public/uploads/characters/')

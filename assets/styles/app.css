@@ -42,6 +42,9 @@ body {
 img {
     width: 100%;
     object-fit: cover;
+    background: radial-gradient(circle, var(--light) 0%, var(--primary-light) 100%);
+    border: 1px solid transparent;
+
 }
 
 dialog:target {

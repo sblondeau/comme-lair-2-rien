@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('build/home.css')}}">
+	<link rel="stylesheet" href="{{ asset('build/spectacle.css')}}">
+{% endblock %}
+
+{% block title %}Spectacle
+{% endblock %}
+
+{% block header %}
+	<h1>
+		{{ spectacle.title }}
+	</h1>
+	<img src="{{ asset('uploads/spectacles/' ~ spectacle.image)}}" alt="Affiche du spectacle {{ spectacle.title }}">
+{% endblock %}
+
+{% block body %}
+	<section class="grid-section">
+		<h1>Présentation</h1>
+		<p>{{ spectacle.description|raw|nl2br }}</p>
+	</section>
+	<section id="characters" class="grid-section">
+		<h1>
+			Personnages
+		</h1>
+
+		<div class="grid">
+			{% for character in spectacle.spectacleCharacters %}
+				{% include 'spectacle/_character.html.twig' %}
+			{% else %}
+				Pas encore d'information sur les personnages
+			{% endfor %}
+		</div>
+	</section>
+	<section class="grid-section">
+		<h1>Gallerie</h1>
+	</section>
+	<section class="grid-section">
+		<h1>Revue de presse</h1>
+	</section>
+{% endblock %}

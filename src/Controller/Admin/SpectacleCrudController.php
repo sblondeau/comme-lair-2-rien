@@ -27,6 +27,7 @@ class SpectacleCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
             CollectionField::new('spectacleCharacters', 'Personnages du spectacle')
                 ->allowAdd(true)
+                ->allowDelete(true)
                 ->showEntryLabel(false)
                 ->useEntryCrudForm(SpectacleCharacterCrudController::class),
         ];

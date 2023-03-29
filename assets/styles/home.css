@@ -13,10 +13,6 @@ body>header {
     height: 100vh;
 }
 
-header img {
-    object-fit: cover;
-}
-
 header div {
     display: flex;
     flex-direction: column;
@@ -43,10 +39,6 @@ section:nth-child(even) {
     background-color: var(--primary-light);
 }
 
-.grid img {
-    background: radial-gradient(circle, var(--light) 0%, var(--primary-light) 100%);
-    border: 1px solid transparent;
-}
 
 /** Presentation **/
 
@@ -58,10 +50,6 @@ section:nth-child(even) {
     padding-inline-end: 0;
 }
 
-.presentation img {
-    object-fit: cover;
-    width: 100%;
-}
 
 .presentation div {
     padding-inline-start: var(--space3);

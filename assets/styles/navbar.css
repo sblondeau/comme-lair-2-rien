@@ -35,6 +35,11 @@ nav .links li:hover {
     background-color: var(--primary-light);
 }
 
+nav details[role="list"] summary:not([role]) {
+    color: var(--light);
+    border: none;
+}
+
 @media screen and (width<760px) {
     nav .menu {
         display: initial;

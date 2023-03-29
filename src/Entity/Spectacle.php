@@ -25,7 +25,12 @@ class Spectacle
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: SpectacleCharacter::class, cascade: ['persist'])]
+    #[ORM\OneToMany(
+        mappedBy: 'spectacle',
+        targetEntity: SpectacleCharacter::class,
+        cascade: ['persist', 'remove'],
+        orphanRemoval: true
+    )]
     private Collection $spectacleCharacters;
 
     public function __construct()

@@ -37,7 +37,6 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Spectacles');
         yield MenuItem::linkToCrud('Spectacles', 'fa fa-tags', Spectacle::class);
-        yield MenuItem::linkToCrud('Personnages', 'fa fa-users', Spectacle::class);
         yield MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Spectacle::class);
         yield MenuItem::section();
         yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'app_home');

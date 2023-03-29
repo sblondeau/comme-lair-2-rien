@@ -1,0 +1,10 @@
+<details{{attributes}} role="list">
+	<summary aria-haspopup="listbox">Spectacles</summary>
+	<ul role="listbox">
+		{% for spectacle in this.spectacles %}
+			<li>
+				<a href="{{ path('app_spectacle', {'spectacle': spectacle.id}) }}">{{ spectacle.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</details>
