@@ -10,7 +10,7 @@ body>header {
     align-items: stretch;
     padding-block: 0;
     background-color: var(--primary-light);
-    height: 100vh;
+    min-height: calc(100vh - var(--navbar-size));
 }
 
 header div {

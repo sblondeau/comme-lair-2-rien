@@ -23,9 +23,20 @@
 	</section>
 	<section id="characters" class="grid-section">
 		<h1>
+			Représentations
+		</h1>
+		<div class="grid">
+			{% for calendar in spectacle.calendars %}
+				{% include 'spectacle/_calendar.html.twig' %}
+			{% else %}
+				Aucune représentation planifiée pour le moment.
+			{% endfor %}
+		</div>
+	</section>
+	<section id="characters" class="grid-section">
+		<h1>
 			Personnages
 		</h1>
-
 		<div class="grid">
 			{% for character in spectacle.spectacleCharacters %}
 				{% include 'spectacle/_character.html.twig' %}

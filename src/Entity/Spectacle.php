@@ -34,6 +34,7 @@ class Spectacle
     private Collection $spectacleCharacters;
 
     #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: Calendar::class)]
+    #[ORM\OrderBy(['datetime' => 'ASC'])]
     private Collection $calendars;
 
     public function __construct()

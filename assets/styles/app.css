@@ -7,7 +7,7 @@
     --secondary: #943636;
     --light: hsl(170, 33%, 96%);
     --dark: #020f0c;
-    
+
 
     --space1: 0.5rem;
     --space2: 1rem;
@@ -43,12 +43,18 @@ img {
     width: 100%;
     object-fit: cover;
     background: radial-gradient(circle, var(--light) 0%, var(--primary-light) 100%);
-    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+}
 
+main img {
+    border: 1px solid transparent;
 }
 
 dialog:target {
-    display:flex;
+    display: flex;
 }
 
 dialog main {
@@ -57,5 +63,8 @@ dialog main {
     flex-wrap: wrap;
 }
 
+section {
+    scroll-margin-top: var(--navbar-size);
+}
 @import url('navbar.css');
 @import url('footer.css');
