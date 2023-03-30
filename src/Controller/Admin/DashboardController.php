@@ -2,15 +2,16 @@
 
 namespace App\Controller\Admin;
 
-use Symfony\Component\HttpFoundation\Response;
-use App\Controller\Admin\CompanyCrudController;
-use App\Entity\Company;
 use App\Entity\Member;
+use App\Entity\Company;
 use App\Entity\Partner;
+use App\Entity\Calendar;
 use App\Entity\Spectacle;
 use App\Repository\CompanyRepository;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
+use Symfony\Component\HttpFoundation\Response;
+use App\Controller\Admin\CompanyCrudController;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -37,7 +38,7 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Spectacles');
         yield MenuItem::linkToCrud('Spectacles', 'fa fa-tags', Spectacle::class);
-        yield MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Spectacle::class);
+        yield MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Calendar::class);
         yield MenuItem::section();
         yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'app_home');
     }

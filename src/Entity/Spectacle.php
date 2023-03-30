@@ -33,9 +33,13 @@ class Spectacle
     )]
     private Collection $spectacleCharacters;
 
+    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: Calendar::class)]
+    private Collection $calendars;
+
     public function __construct()
     {
         $this->spectacleCharacters = new ArrayCollection();
+        $this->calendars = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -103,6 +107,36 @@ class Spectacle
             // set the owning side to null (unless already changed)
             if ($spectacleCharacter->getSpectacle() === $this) {
                 $spectacleCharacter->setSpectacle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Calendar>
+     */
+    public function getCalendars(): Collection
+    {
+        return $this->calendars;
+    }
+
+    public function addCalendar(Calendar $calendar): self
+    {
+        if (!$this->calendars->contains($calendar)) {
+            $this->calendars->add($calendar);
+            $calendar->setSpectacle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCalendar(Calendar $calendar): self
+    {
+        if ($this->calendars->removeElement($calendar)) {
+            // set the owning side to null (unless already changed)
+            if ($calendar->getSpectacle() === $this) {
+                $calendar->setSpectacle(null);
             }
         }
 
