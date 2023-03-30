@@ -79,4 +79,9 @@ class Calendar
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getDatetime()->format('d/m/Y H:i');
+    }
 }

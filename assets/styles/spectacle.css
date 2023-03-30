@@ -8,3 +8,7 @@ header h1 {
     text-align: right;
     padding: var(--space2);
 }
+
+article.passed {
+    filter:grayscale(100%) brightness(150%);
+}

@@ -1,6 +1,6 @@
-<article>
+<article class="{{calendar.datetime < date('now') ? 'passed'}}">
 	<main>
-		<h1>{{ calendar.datetime|date('D/M/Y H\hi') }}</h1>
+		<h1>{{ calendar.datetime|date('d/m/Y H\hi') }}</h1>
 		<address>{{ calendar.address }}</address>
 		<a role="button" href="#calendar{{calendar.id}}">Plus d'information</a>
 	</main>

@@ -50,5 +50,12 @@
 	</section>
 	<section class="grid-section">
 		<h1>Revue de presse</h1>
+		<div class="grid">
+			{% for pressReview in spectacle.pressReviews %}
+				{% include 'spectacle/_pressReview.html.twig' %}
+			{% else %}
+				Pas encore de revue de presse pour ce spectacle
+			{% endfor %}
+		</div>
 	</section>
 {% endblock %}

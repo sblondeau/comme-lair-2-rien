@@ -37,10 +37,14 @@ class Spectacle
     #[ORM\OrderBy(['datetime' => 'ASC'])]
     private Collection $calendars;
 
+    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: PressReview::class)]
+    private Collection $pressReviews;
+
     public function __construct()
     {
         $this->spectacleCharacters = new ArrayCollection();
         $this->calendars = new ArrayCollection();
+        $this->pressReviews = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -138,6 +142,36 @@ class Spectacle
             // set the owning side to null (unless already changed)
             if ($calendar->getSpectacle() === $this) {
                 $calendar->setSpectacle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, PressReview>
+     */
+    public function getPressReviews(): Collection
+    {
+        return $this->pressReviews;
+    }
+
+    public function addPressReview(PressReview $pressReview): self
+    {
+        if (!$this->pressReviews->contains($pressReview)) {
+            $this->pressReviews->add($pressReview);
+            $pressReview->setSpectacle($this);
+        }
+
+        return $this;
+    }
+
+    public function removePressReview(PressReview $pressReview): self
+    {
+        if ($this->pressReviews->removeElement($pressReview)) {
+            // set the owning side to null (unless already changed)
+            if ($pressReview->getSpectacle() === $this) {
+                $pressReview->setSpectacle(null);
             }
         }
 

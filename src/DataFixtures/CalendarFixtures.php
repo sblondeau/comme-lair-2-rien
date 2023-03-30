@@ -20,7 +20,7 @@ class CalendarFixtures extends Fixture implements DependentFixtureInterface
         for ($j = 0; $j < count(SpectacleFixtures::SPECTACLES); $j++) {
             for ($i = 0; $i < self::CALENDAR_NUMBER; $i++) {
                 $calendar = new Calendar();
-                $calendar->setDatetime($faker->dateTimeBetween());
+                $calendar->setDatetime($faker->dateTimeThisYear('+3 months'));
                 $calendar->setAddress($faker->address());
                 $calendar->setInformation($faker->text());
                 $calendar->setSpectacle($this->getReference('spectacle' . $j));
@@ -28,6 +28,7 @@ class CalendarFixtures extends Fixture implements DependentFixtureInterface
                 $manager->persist($calendar);
             }
         }
+
         $manager->flush();
     }
 

@@ -10,6 +10,7 @@ use App\Entity\Spectacle;
 use App\Repository\CompanyRepository;
 use Symfony\Component\HttpFoundation\Response;
 use App\Controller\Admin\CompanyCrudController;
+use App\Entity\PressReview;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -39,6 +40,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Spectacles');
         yield MenuItem::linkToCrud('Spectacles', 'fa fa-tags', Spectacle::class);
         yield MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Calendar::class);
+        yield MenuItem::linkToCrud('Revue de presse', 'fa-regular fa-newspaper', PressReview::class);
         yield MenuItem::section();
         yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'app_home');
     }
