@@ -47,6 +47,12 @@
 	</section>
 	<section class="grid-section">
 		<h1>Gallerie</h1>
+		<div class="grid">
+			{% for gallery in spectacle.galleries %}
+				{% include 'spectacle/_gallery.html.twig' %}
+			{% endfor %}
+		</div>
+
 	</section>
 	<section class="grid-section">
 		<h1>Revue de presse</h1>

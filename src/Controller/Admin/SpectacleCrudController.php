@@ -30,6 +30,11 @@ class SpectacleCrudController extends AbstractCrudController
                 ->allowDelete(true)
                 ->showEntryLabel(false)
                 ->useEntryCrudForm(SpectacleCharacterCrudController::class),
+                CollectionField::new('galleries', 'Images du spectacle')
+                ->allowAdd(true)
+                ->allowDelete(true)
+                ->showEntryLabel(false)
+                ->useEntryCrudForm(GalleryCrudController::class),
         ];
     }
 }

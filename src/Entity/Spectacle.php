@@ -40,11 +40,15 @@ class Spectacle
     #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: PressReview::class)]
     private Collection $pressReviews;
 
+    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: Gallery::class)]
+    private Collection $galleries;
+
     public function __construct()
     {
         $this->spectacleCharacters = new ArrayCollection();
         $this->calendars = new ArrayCollection();
         $this->pressReviews = new ArrayCollection();
+        $this->galleries = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -172,6 +176,36 @@ class Spectacle
             // set the owning side to null (unless already changed)
             if ($pressReview->getSpectacle() === $this) {
                 $pressReview->setSpectacle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Gallery>
+     */
+    public function getGalleries(): Collection
+    {
+        return $this->galleries;
+    }
+
+    public function addGallery(Gallery $gallery): self
+    {
+        if (!$this->galleries->contains($gallery)) {
+            $this->galleries->add($gallery);
+            $gallery->setSpectacle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGallery(Gallery $gallery): self
+    {
+        if ($this->galleries->removeElement($gallery)) {
+            // set the owning side to null (unless already changed)
+            if ($gallery->getSpectacle() === $this) {
+                $gallery->setSpectacle(null);
             }
         }
 

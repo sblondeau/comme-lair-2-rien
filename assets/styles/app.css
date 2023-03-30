@@ -63,8 +63,13 @@ dialog main {
     flex-wrap: wrap;
 }
 
+dialog.large-modal > article {
+    width: 75vw;
+}
+
 section {
     scroll-margin-top: var(--navbar-size);
 }
+
 @import url('navbar.css');
 @import url('footer.css');
