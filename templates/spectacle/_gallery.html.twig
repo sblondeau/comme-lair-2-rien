@@ -5,12 +5,10 @@
 </article>
 <dialog id="gallery{{gallery.id}}" class="large-modal">
 	<article>
-		<header>
+		<headear>
 			<a href="#close" aria-label="Close" class="close"></a>
-		</header>
-		<figure>
-			<img src="{{ asset('uploads/galleries/' ~ gallery.image) }}" alt="{{ gallery.legend }}">
-			<figcaption>{{ gallery.legend }}</figcaption>
-		</figure>
+			<p>{{ gallery.legend }}</p>
+		</headear>
+		<img src="{{ asset('uploads/galleries/' ~ gallery.image) }}" alt="{{ gallery.legend }}">
 	</article>
 </dialog>
