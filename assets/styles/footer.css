@@ -24,3 +24,11 @@ footer ul li svg {
     height: var(--font-size-text);
 
 }
+
+.footer-bottom {
+    margin-block-start: var(--space2);
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap:var(--space2);
+}
