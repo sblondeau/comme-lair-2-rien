@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Spectacle;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class SpectacleFixtures extends Fixture
 {
@@ -21,6 +22,10 @@ class SpectacleFixtures extends Fixture
         ],
     ];
 
+    public function __construct(private SluggerInterface $slugger)
+    {
+    }
+
     public function load(ObjectManager $manager): void
     {
         foreach (self::SPECTACLES as $key => $spectacleData) {
@@ -28,6 +33,7 @@ class SpectacleFixtures extends Fixture
             $spectacle->setTitle($spectacleData['title']);
             $spectacle->setDescription($spectacleData['description']);
             $spectacle->setImage('');
+            $spectacle->setSlug($this->slugger->slug($spectacle->getTitle()));
             $this->addReference('spectacle' . $key, $spectacle);
             $manager->persist($spectacle);
         }

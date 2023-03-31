@@ -3,7 +3,7 @@
 	<ul role="listbox">
 		{% for spectacle in this.spectacles %}
 			<li>
-				<a href="{{ path('app_spectacle', {'spectacle': spectacle.id}) }}">{{ spectacle.title }}</a>
+				<a href="{{ path('app_spectacle', {'slug': spectacle.slug}) }}">{{ spectacle.title }}</a>
 			</li>
 		{% endfor %}
 	</ul>

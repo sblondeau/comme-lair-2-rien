@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use PHPMD\Utility\Strings;
+use Symfony\Component\Form\Util\StringUtil;
 
 #[ORM\Entity(repositoryClass: SpectacleRepository::class)]
 class Spectacle
@@ -42,6 +44,9 @@ class Spectacle
 
     #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: Gallery::class)]
     private Collection $galleries;
+
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
 
     public function __construct()
     {
@@ -208,6 +213,18 @@ class Spectacle
                 $gallery->setSpectacle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

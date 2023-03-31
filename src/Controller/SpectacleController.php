@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SpectacleController extends AbstractController
 {
-    #[Route('/spectacle/{spectacle}', name: 'app_spectacle')]
+    #[Route('/spectacle/{slug}', name: 'app_spectacle')]
     public function index(Spectacle $spectacle): Response
     {
         return $this->render('spectacle/index.html.twig', [
