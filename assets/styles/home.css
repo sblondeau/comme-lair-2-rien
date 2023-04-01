@@ -64,13 +64,12 @@ section:nth-child(even) {
 .grid-section .grid {
     --breakpoint: 360px;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--breakpoint), 100%), 1fr));
+    gap: var(--space2);
 }
 
 .grid-section .spectacles {
     grid-template-columns: repeat(auto-fit, minmax(min(var(--breakpoint), 100%), 1fr));
 }   
-
-
 
 .grid-section {
     padding: var(--space3);
@@ -78,27 +77,42 @@ section:nth-child(even) {
 
 .grid article {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-
+    justify-content: space-between;
+    
+    --spacing: 0;
 }
 
-.grid-section .grid>article>main {
+.grid article > div {
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: calc(var(--block-spacing-vertical) * 3);
+    --spacing: var(--space2);
+    --block-spacing-horizontal: var(--spacing);
+    padding: var(--space2);
+    flex-grow: 2;
+}
+
+.grid area > div p {
+    flex-grow: 2;
+
+}
+
+/* .grid-section .grid>article>main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex-grow: 2;
 }
 
 .grid-section .grid>article>main a {
     align-self: stretch;
-}
-
+} */
+/* 
 .grid-section .grid>article {
-    --block-spacing-vertical: var(--space1);
     padding: 0;
-}
+} */
 
 .grid-section .grid>article h1 {
     color: var(--secondary);

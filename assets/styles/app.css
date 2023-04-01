@@ -59,17 +59,15 @@ dialog:target {
     display: flex;
 }
 
-dialog main {
-    display: flex;
-    gap: var(--space2);
-    flex-wrap: wrap;
-}
 
-dialog>article {
+
+
+dialog > article {
     animation: modal 0.5s;
+    padding: var(--space2);
 }
 
-dialog.large-modal>article {
+dialog.large-modal > article {
     max-width: 65vw;
 }
 

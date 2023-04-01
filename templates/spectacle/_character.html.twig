@@ -1,9 +1,11 @@
 <article>
-	<img src="{{ asset('uploads/characters/' ~ character.image)  }}" alt="photo du personnage {{ character.name }}">
-	<main>
+	<header>
+		<img src="{{ asset('uploads/characters/' ~ character.image) }}" alt="photo du personnage {{ character.name }}">
+	</header>
+	<div>
 		<h1>{{ character.name }}</h1>
 		<a role="button" href="#character{{character.id}}">Plus d'information</a>
-	</main>
+	</div>
 </article>
 <dialog id="character{{character.id}}">
 	<article>
@@ -11,9 +13,7 @@
 			<a href="#close" aria-label="Close" class="close"></a>
 			<h2>{{  character.name }}</h2>
 		</header>
-		<main>
-			<img src="{{ asset('uploads/members/' ~ character.image)  }}" alt="">
-			<p>{{ character.description|nl2br }}</p>
-		</main>
+		<img src="{{ asset('uploads/members/' ~ character.image) }}" alt="">
+		<p>{{ character.description|nl2br }}</p>
 	</article>
 </dialog>

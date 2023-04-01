@@ -1,8 +1,7 @@
 body>footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--breakpoint), 50%), 1fr));
+    display: flex;
+    flex-wrap: wrap;
     --color: var(--light);
-
     background-color: var(--primary);
 }
 
@@ -14,6 +13,9 @@ body>footer a {
     --color: var(--light);
 }
 
+footer > div {
+    min-width: 50%;
+}
 footer ul li {
     list-style-type: none;
 }
@@ -25,8 +27,8 @@ footer ul li svg {
 
 .footer-bottom {
     margin-block-start: var(--space3);
-    grid-column: span 2;
     display: flex;
     justify-content: center;
-    gap:var(--space2);
+    gap: var(--space2);
+    width: 100%;
 }

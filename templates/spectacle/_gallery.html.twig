@@ -1,7 +1,10 @@
 <article>
-	<a href="#gallery{{gallery.id}}">
-		<img src="{{ asset('uploads/galleries/' ~ gallery.image) }}" alt="{{ gallery.legend }}">
-	</a>
+	<header>
+		<a href="#gallery{{gallery.id}}">
+			<img src="{{ asset('uploads/galleries/' ~ gallery.image) }}" alt="{{ gallery.legend }}">
+		</a>
+	</header>
+
 </article>
 <dialog id="gallery{{gallery.id}}" class="large-modal">
 	<article>

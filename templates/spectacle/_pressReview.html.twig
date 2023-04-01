@@ -1,9 +1,11 @@
 <article>
-	<img src="{{ asset('uploads/pressReviews/' ~ pressReview.image) }}" alt="illustration de l'article {{ pressReview.title }}">
-	<main>
+	<header>
+		<img src="{{ asset('uploads/pressReviews/' ~ pressReview.image) }}" alt="illustration de l'article {{ pressReview.title }}">
+	</header>
+	<div>
 		<h1>{{ pressReview.title }}</h1>
 		<a role="button" href="#pressReview{{pressReview.id}}">Plus d'information</a>
-	</main>
+	</div>
 </article>
 <dialog id="pressReview{{pressReview.id}}">
 	<article>
@@ -11,12 +13,10 @@
 			<a href="#close" aria-label="Close" class="close"></a>
 			<h2>{{  pressReview.title }}</h2>
 		</header>
-		<main>
-			<img src="{{ asset('uploads/members/' ~ pressReview.image) }}" alt="">
-			<p>{{ pressReview.detail|nl2br|raw }}</p>
-			{% if pressReview.link is not null %}
-				<a target="_blank" href="{{ pressReview.link }}">Source</a>
-			{% endif %}
-		</main>
+		<img src="{{ asset('uploads/members/' ~ pressReview.image) }}" alt="">
+		<p>{{ pressReview.detail|nl2br|raw }}</p>
+		{% if pressReview.link is not null %}
+			<a target="_blank" href="{{ pressReview.link }}">Source</a>
+		{% endif %}
 	</article>
 </dialog>
