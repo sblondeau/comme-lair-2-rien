@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PressReviewRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PressReviewRepository::class)]
 class PressReview
@@ -15,15 +16,21 @@ class PressReview
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank()]
+    #[Assert\Length(max: 255)]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $detail = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Url()]
+    #[Assert\Length(max: 255)]
     private ?string $link = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\NotBlank()]
     private ?string $image = null;
 
     #[ORM\ManyToOne(inversedBy: 'pressReviews')]
@@ -75,7 +82,7 @@ class PressReview
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -96,6 +103,6 @@ class PressReview
 
     public function __toString()
     {
-        return $this->getTitle();
+        return (string)$this->getTitle();
     }
 }

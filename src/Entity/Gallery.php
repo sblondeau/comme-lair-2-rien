@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\GalleryRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: GalleryRepository::class)]
 class Gallery
@@ -14,9 +15,12 @@ class Gallery
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank()]
+    #[Assert\Length(max: 255)]
     private ?string $image = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
     private ?string $legend = null;
 
     #[ORM\ManyToOne(inversedBy: 'galleries')]
@@ -32,7 +36,7 @@ class Gallery
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -61,5 +65,10 @@ class Gallery
         $this->spectacle = $spectacle;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string)substr($this->getLegend(), 0, 50) . '...';
     }
 }

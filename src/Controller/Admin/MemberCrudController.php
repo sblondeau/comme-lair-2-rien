@@ -34,9 +34,10 @@ class MemberCrudController extends AbstractCrudController
             UrlField::new('instagram'),
             UrlField::new('website', 'Site web'),
             ImageField::new('image')
+                ->setFormTypeOption('required', false)
                 ->setBasePath('uploads/members/')
                 ->setUploadDir('public/uploads/members/')
-                ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
         ];
     }
 }

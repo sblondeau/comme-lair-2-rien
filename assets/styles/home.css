@@ -63,8 +63,14 @@ section:nth-child(even) {
 
 .grid-section .grid {
     --breakpoint: 360px;
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--breakpoint), 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--breakpoint), 100%), 1fr));
 }
+
+.grid-section .spectacles {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--breakpoint), 100%), 1fr));
+}   
+
+
 
 .grid-section {
     padding: var(--space3);
@@ -122,4 +128,16 @@ section:nth-child(even) {
 .partners figcaption h2 {
     text-align: center;
     --color: var(--secondary);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: var(--space2);
+    padding:0;
+    width: 100%;
+}
+
+.social li {
+    list-style-type: none;
 }

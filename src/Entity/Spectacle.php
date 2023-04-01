@@ -7,8 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use PHPMD\Utility\Strings;
-use Symfony\Component\Form\Util\StringUtil;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SpectacleRepository::class)]
 class Spectacle
@@ -19,12 +18,16 @@ class Spectacle
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\NotBlank()]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\NotBlank()]
     private ?string $image = null;
 
     #[ORM\OneToMany(
@@ -33,16 +36,35 @@ class Spectacle
         cascade: ['persist', 'remove'],
         orphanRemoval: true
     )]
+    #[Assert\Valid()]
     private Collection $spectacleCharacters;
 
-    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: Calendar::class)]
+    #[ORM\OneToMany(
+        mappedBy: 'spectacle',
+        targetEntity: Calendar::class,
+        cascade: ['persist', 'remove'],
+        orphanRemoval: true
+    )]
     #[ORM\OrderBy(['datetime' => 'ASC'])]
+    #[Assert\Valid()]
     private Collection $calendars;
 
-    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: PressReview::class)]
+    #[ORM\OneToMany(
+        mappedBy: 'spectacle',
+        targetEntity: PressReview::class,
+        cascade: ['persist', 'remove'],
+        orphanRemoval: true
+    )]
+    #[Assert\Valid()]
     private Collection $pressReviews;
 
-    #[ORM\OneToMany(mappedBy: 'spectacle', targetEntity: Gallery::class)]
+    #[ORM\OneToMany(
+        mappedBy: 'spectacle',
+        targetEntity: Gallery::class,
+        cascade: ['persist', 'remove'],
+        orphanRemoval: true
+    )]
+    #[Assert\Valid()]
     private Collection $galleries;
 
     #[ORM\Column(length: 255)]
@@ -90,7 +112,7 @@ class Spectacle
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 

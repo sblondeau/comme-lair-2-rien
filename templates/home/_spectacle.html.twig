@@ -2,7 +2,7 @@
 	<img src="{{ asset('uploads/spectacles/' ~ spectacle.image) }}" alt="">
 	<main>
 		<h1>{{ spectacle.title }}</h1>
-		<p>{{ spectacle.description|nl2br }}
+		<p>{{ spectacle.description|raw|nl2br }}
 		</p>
 		<a role="button" href="{{ path('app_spectacle', {'slug': spectacle.slug}) }}">Plus d'information</a>
 	</main>

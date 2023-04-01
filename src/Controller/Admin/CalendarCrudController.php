@@ -30,8 +30,6 @@ class CalendarCrudController extends AbstractCrudController
             DateTimeField::new('datetime', 'Date de la représentation'),
             TextField::new('address', 'Adresse'),
             TextEditorField::new('information'),
-            AssociationField::new('spectacle')
-                ->setFormTypeOption('choice_label', 'title'),
         ];
     }
 }

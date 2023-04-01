@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MemberRepository::class)]
 #[ORM\Table(name: '`member`')]
@@ -18,24 +19,35 @@ class Member
     private ?int $id = null;
 
     #[ORM\Column(length: 80)]
+    #[Assert\NotBlank()]
+    #[Assert\Length(max: 80)]
     private ?string $firstName = null;
 
     #[ORM\Column(length: 80)]
+    #[Assert\NotBlank()]
+    #[Assert\Length(max: 80)]
     private ?string $lastName = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $biography = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
     private ?string $image = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
+    #[Assert\Url()]
     private ?string $facebook = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
+    #[Assert\Url()]
     private ?string $instagram = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
+    #[Assert\Url()]
     private ?string $website = null;
 
     #[ORM\OneToMany(mappedBy: 'companyMember', targetEntity: SpectacleCharacter::class)]

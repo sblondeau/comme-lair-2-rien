@@ -26,9 +26,10 @@ class SpectacleCharacterCrudController extends AbstractCrudController
             AssociationField::new('companyMember', 'Membre')
                 ->setFormTypeOption('choice_label', 'fullName'),
             ImageField::new('image')
+                ->setFormTypeOption('required', false)
                 ->setBasePath('uploads/characters/')
                 ->setUploadDir('public/uploads/characters/')
-                ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
         ];
     }
 }

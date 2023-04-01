@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CalendarRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CalendarRepository::class)]
 class Calendar
@@ -15,12 +16,15 @@ class Calendar
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\NotBlank()]
     private ?\DateTimeInterface $datetime = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable:true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $information = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank()]
+    #[Assert\Length(max: 255)]
     private ?string $address = null;
 
     #[ORM\ManyToOne(inversedBy: 'calendars')]

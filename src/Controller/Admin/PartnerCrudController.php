@@ -31,9 +31,10 @@ class PartnerCrudController extends AbstractCrudController
             UrlField::new('website', 'Site web'),
             TextEditorField::new('description'),
             ImageField::new('image')
+                ->setFormTypeOption('required', false)
                 ->setBasePath('uploads/partners/')
                 ->setUploadDir('public/uploads/partners/')
-                ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
         ];
     }
 }

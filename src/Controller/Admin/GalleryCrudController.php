@@ -20,9 +20,10 @@ class GalleryCrudController extends AbstractCrudController
         return [
             TextField::new('legend'),
             ImageField::new('image')
+                ->setFormTypeOption('required', false)
                 ->setBasePath('uploads/galleries/')
                 ->setUploadDir('public/uploads/galleries/')
-                ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
 
         ];
     }

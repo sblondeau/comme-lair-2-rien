@@ -31,16 +31,16 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::section('Compagnie');
-        yield MenuItem::linkToCrud('Informations', 'fa fa-circle-info', Company::class)
+        yield MenuItem::section('Gestion de la compagnie');
+        yield MenuItem::linkToCrud('Présentation', 'fa fa-circle-info', Company::class)
             ->setAction('edit')->setEntityId($this->companyRepository->findOneBy([])->getId());
         yield MenuItem::linkToCrud('Membres', 'fa fa-users', Member::class);
         yield MenuItem::linkToCrud('Partenaires', 'fa fa-handshake-angle', Partner::class);
 
-        yield MenuItem::section('Spectacles');
-        yield MenuItem::linkToCrud('Spectacles', 'fa fa-tags', Spectacle::class);
-        yield MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Calendar::class);
-        yield MenuItem::linkToCrud('Revue de presse', 'fa-regular fa-newspaper', PressReview::class);
+        yield MenuItem::section('Gestion des spectacles');
+        yield MenuItem::linkToCrud('Spectacles', 'fa fa-masks-theater', Spectacle::class);
+        // yield MenuItem::linkToCrud('Calendrier', 'fa-regular fa-calendar', Calendar::class);
+        // yield MenuItem::linkToCrud('Revue de presse', 'fa-regular fa-newspaper', PressReview::class);
         yield MenuItem::section();
         yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'app_home');
     }

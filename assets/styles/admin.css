@@ -1,3 +1,7 @@
 :root {
     --color-primary: rgb(26, 188, 156);
 }
+
+.login {
+    width: 60%;
+}

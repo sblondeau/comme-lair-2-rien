@@ -32,12 +32,10 @@ class PressReviewCrudController extends AbstractCrudController
             TextEditorField::new('detail'),
             UrlField::new('link'),
             ImageField::new('image')
+                ->setFormTypeOption('required', false)
                 ->setBasePath('uploads/pressReviews/')
                 ->setUploadDir('public/uploads/pressReviews/')
-                ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
-            AssociationField::new('spectacle')
-                ->setFormTypeOption('choice_label', 'title'),
-
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
         ];
     }
 }

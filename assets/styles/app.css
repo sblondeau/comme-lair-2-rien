@@ -42,6 +42,7 @@ body {
 img {
     width: 100%;
     object-fit: cover;
+    object-position: top;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -14,7 +14,6 @@ body>footer a {
     --color: var(--light);
 }
 
-
 footer ul li {
     list-style-type: none;
 }
@@ -22,11 +21,10 @@ footer ul li {
 footer ul li svg {
     width: var(--font-size-text);
     height: var(--font-size-text);
-
 }
 
 .footer-bottom {
-    margin-block-start: var(--space2);
+    margin-block-start: var(--space3);
     grid-column: span 2;
     display: flex;
     justify-content: center;

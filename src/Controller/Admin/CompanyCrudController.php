@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 
 class CompanyCrudController extends AbstractCrudController
 {
@@ -32,6 +33,10 @@ class CompanyCrudController extends AbstractCrudController
     {
         return [
             TextEditorField::new('description'),
+            UrlField::new('facebook'),
+            UrlField::new('instagram'),
+            UrlField::new('soundcloud'),
+            UrlField::new('youtube'),
         ];
     }
 }

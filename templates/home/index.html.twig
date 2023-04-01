@@ -27,9 +27,9 @@
 		<img src="{{ asset('build/images/presentation_compagnie.jpg')}}" alt="Les membres de la troupe">
 	</section>
 
-	<section id="spectacles" class="grid-section">
+	<section id="spectacles" class="grid-section ">
 		<h1>Spectacles</h1>
-		<div class="grid">
+		<div class="grid spectacles">
 			{% for spectacle in spectacles %}
 				{% include 'home/_spectacle.html.twig' %}
 			{% endfor %}
