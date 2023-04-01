@@ -48,7 +48,8 @@ img {
     color: var(--primary);
 }
 
-main img, header img {
+main img,
+header img {
     background: radial-gradient(circle, var(--light) 0%, var(--primary-light) 100%);
     border: 1px solid transparent;
 }
@@ -62,9 +63,11 @@ dialog main {
     gap: var(--space2);
     flex-wrap: wrap;
 }
-dialog > article {
+
+dialog>article {
     animation: modal 0.5s;
 }
+
 dialog.large-modal>article {
     max-width: 65vw;
 }

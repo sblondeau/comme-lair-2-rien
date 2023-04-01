@@ -22,10 +22,12 @@ header div {
 
 header h1 {
     font-size: calc(var(--font-size-title) * 2);
+    margin: var(--spacing);
 }
 
 header h2 {
     --color: var(--secondary);
+    margin: var(--spacing);
 }
 
 
@@ -60,7 +62,8 @@ section:nth-child(even) {
 /** Spectacles **/
 
 .grid-section .grid {
-    grid-template-columns: repeat(auto-fit, minmax(max(var(--breakpoint), var(--size, 25%)), 1fr));
+    --breakpoint: 360px;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--breakpoint), 100%), 1fr));
 }
 
 .grid-section {
