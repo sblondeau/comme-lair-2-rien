@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('build/home.css')}}">
+	<link rel="stylesheet" href="{{ asset('build/legal.css')}}">
+{% endblock %}
+
+{% block title %}Mentions légales
+{% endblock %}
+
+{% block header %}
+	<h1>
+		Mentions légales
+	</h1>
+{% endblock %}
+
+{% block body %}
+	<section class="container">
+		<h1>Informations obligatoires</h1>
+
+		<p>
+			Site internet de l’Association Comme l'air de rien, association loi 1901 reconnue d'utilité publique par décret en date du 2 juin 2010 et membre du comité de la Charte.
+		</p>
+
+		<ul>
+			<li>Adresse siège social : rue Jean Monnet - Talant</li>
+			<li>Président de l’Association Comme l'air de rien : Nadine Blondeau</li>
+			<li>Directeur de la Communication et des Partenariats : Nadine Blondeau</li>
+			<li>Hébergement et webmastering : OVH - Sylvain Blondeau</li>
+		</ul>
+
+	</section>
+
+{% endblock %}

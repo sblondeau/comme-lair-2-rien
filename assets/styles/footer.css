@@ -5,11 +5,11 @@ body>footer {
     background-color: var(--primary);
 }
 
-body>footer h2 {
+footer  h2 {
     --color: var(--light);
 }
 
-body>footer a {
+body>footer  a {
     --color: var(--light);
 }
 

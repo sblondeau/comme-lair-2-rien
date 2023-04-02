@@ -1,9 +1,9 @@
 /** Header **/
-body>main {
+body > main {
     --block-spacing-vertical: 0;
 }
 
-body>header {
+body > header {
     --block-spacing-vertical: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(var(--breakpoint), 50%), 1fr));

@@ -60,8 +60,6 @@ dialog:target {
 }
 
 
-
-
 dialog > article {
     animation: modal 0.5s;
     padding: var(--space2);

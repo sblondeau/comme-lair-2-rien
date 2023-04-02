@@ -39,6 +39,16 @@ class Company
     #[Assert\Url()]
     private ?string $youtube = null;
 
+    #[ORM\Column(length: 20, nullable: true)]
+    #[Assert\Length(max: 20)]
+    private ?string $phone = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\Email()]
+    #[Assert\NotBlank()]
+    private ?string $email = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -100,6 +110,30 @@ class Company
     public function setYoutube(?string $youtube): self
     {
         $this->youtube = $youtube;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

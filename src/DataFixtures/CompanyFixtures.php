@@ -19,6 +19,8 @@ class CompanyFixtures extends Fixture
         $company->setInstagram($faker->url());
         $company->setSoundcloud($faker->url());
         $company->setYoutube($faker->url());
+        $company->setEmail('commelair2rien@gmail.com');
+        $company->setPhone($faker->phoneNumber());
         $manager->persist($company);
         $manager->flush();
     }
