@@ -1,6 +1,5 @@
 nav {
     --nav-element-spacing-vertical: 0;
-    padding: var(--spacing);
     background-color: var(--primary);
     flex-wrap: wrap;
     align-items: center;
@@ -8,6 +7,12 @@ nav {
     position: fixed;
     inset: 0;
     z-index: 1;
+}
+
+nav ul {
+    padding-inline: var(--spacing);
+    padding-block-start: var(--spacing);
+    padding-block-end: 0;
 }
 
 nav a {
@@ -32,6 +37,7 @@ nav .links li {
     padding: var(--space1);
     border-radius: var(--space1);
 }
+
 nav .links li:hover {
     background-color: var(--primary-light);
 }
@@ -51,11 +57,11 @@ nav details[role="list"] summary:not([role]) {
     }
 
     nav .links:target {
-        padding-block-start: var(--space2);
         display: flex;
         align-items: stretch;
         flex-direction: column;
         gap: var(--space1);
         width: 100%;
+        background-color: inherit;
     }
 }

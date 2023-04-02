@@ -68,7 +68,7 @@ section:nth-child(even) {
 }
 
 .grid-section .spectacles {
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--breakpoint), 100%), 1fr));
+    --breakpoint: 720px;
 }   
 
 .grid-section {
@@ -99,29 +99,21 @@ section:nth-child(even) {
 
 }
 
-/* .grid-section .grid>article>main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 2;
-}
-
-.grid-section .grid>article>main a {
-    align-self: stretch;
-} */
-/* 
-.grid-section .grid>article {
-    padding: 0;
-} */
-
 .grid-section .grid>article h1 {
     color: var(--secondary);
     font-size: calc(var(--font-size-subtitle) * 0.7);
 }
 
 .grid-section .grid>article img {
-    height: 350px;
+    --card-img-height: 350px;
+    height: var(--card-img-height);
 }
+
+
+.grid-section .grid.spectacles > article img {
+    --card-img-height: 500px;
+}
+
 
 .members .grid {
     --size: calc(100% / 6);

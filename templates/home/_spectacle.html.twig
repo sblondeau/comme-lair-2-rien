@@ -4,8 +4,6 @@
 	</header>
 	<div>
 		<h1>{{ spectacle.title }}</h1>
-		<p>{{ spectacle.description|raw|nl2br }}
-		</p>
 		<a role="button" href="{{ path('app_spectacle', {'slug': spectacle.slug}) }}">Plus d'information</a>
 	</div>
 </article>
