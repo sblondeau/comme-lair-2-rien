@@ -3,6 +3,7 @@
 
 :root[data-theme] {
     --primary: rgb(26, 188, 156);
+    --primary-hover: rgb(28, 206, 171);
     --primary-light: rgba(26, 188, 156, 0.2);
     --secondary: #943636;
     --light: hsl(170, 33%, 96%);
