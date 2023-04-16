@@ -14,7 +14,7 @@
 			<h2>{{  pressReview.title }}</h2>
 		</header>
 		<img src="{{ asset('uploads/members/' ~ pressReview.image) }}" alt="">
-		<p>{{ pressReview.detail|nl2br|raw }}</p>
+		<p>{{ pressReview.detail|raw|nl2br }}</p>
 		{% if pressReview.link is not null %}
 			<a target="_blank" href="{{ pressReview.link }}">Source</a>
 		{% endif %}

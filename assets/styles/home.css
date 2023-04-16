@@ -120,19 +120,24 @@ section:nth-child(even) {
 }
 
 .partners .grid {
-    --breakpoint: 180px;
     --size: 0%;
 }
 
+.partners .grid figure {
+    margin: 0;
+}
+
 .partners .grid figure img {
-    border-radius: 50%;
+    border-radius: 8px;
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 3/2;
 }
 
 
 .partners figcaption h2 {
     text-align: center;
+    font-size: 1.2rem;
+    margin-block-end: 0;
     --color: var(--secondary);
 }
 

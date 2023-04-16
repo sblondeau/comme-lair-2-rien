@@ -70,6 +70,9 @@ dialog.large-modal > article {
     max-width: 65vw;
 }
 
+dialog img {
+    max-height: 60vh;
+}
 
 section {
     scroll-margin-top: var(--navbar-size);
