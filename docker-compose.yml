@@ -19,9 +19,9 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
       # - "traefik.http.routers.${PROJECT_NAME:-project}-secure.entrypoints=websecure"
-      - "traefik.http.routers.ca2r-secure.entrypoints=websecure"
+      - "traefik.http.routers.cadr-secure.entrypoints=websecure"
       # - "traefik.http.routers.${PROJECT_NAME:-project}-secure.rule=Host(`${PROJECT_NAME:-project}.${HOST:-localhost}`)"
-      - "traefik.http.routers.ca2r-secure.rule=Host(`commelair2rien.fr`)" 
+      - "traefik.http.routers.cadr-secure.rule=Host(`commelair2rien.fr`)" 
 
   # mailer:
   #   image: mailhog/mailhog:latest
