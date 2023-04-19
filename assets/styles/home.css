@@ -53,12 +53,15 @@ section:nth-child(even) {
 }
 
 
-.presentation div {
-    padding-inline-start: var(--space3);
+.presentation > div {
+    padding-inline: var(--space3);
     --block-spacing-vertical: var(--space3);
     padding-block: var(--block-spacing-vertical);
 }
 
+.presentation p div {
+    --block-spacing-vertical: 0;
+}
 /** Spectacles **/
 
 .grid-section .grid {
@@ -125,12 +128,17 @@ section:nth-child(even) {
 
 .partners .grid figure {
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .partners .grid figure img {
+    display: flex;
+    padding: var(--spacing);
     border-radius: 8px;
     width: 100%;
-    aspect-ratio: 3/2;
+    height: 200px;
+    object-fit: contain;
 }
 
 
