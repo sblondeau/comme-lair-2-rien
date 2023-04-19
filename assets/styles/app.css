@@ -64,6 +64,8 @@ dialog:target {
 dialog > article {
     animation: modal 0.5s;
     padding: var(--space2);
+    max-height: 95vh;
+    overflow: auto;
 }
 
 dialog.large-modal > article {
