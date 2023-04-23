@@ -78,5 +78,13 @@ section {
     scroll-margin-top: var(--navbar-size);
 }
 
+article  {
+    --block-spacing-vertical: var(--spacing);
+}
+
+article h1, article h2 {
+    --typography-spacing-vertical: var(--spacing);
+}
+
 @import url('navbar.css');
 @import url('footer.css');
