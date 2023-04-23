@@ -32,3 +32,8 @@ footer ul li svg {
     gap: var(--space2);
     width: 100%;
 }
+
+footer ul.grid {
+    --breakpoint:20px;
+    grid-template-columns: repeat(auto-fill, var(--breakpoint, 1fr));
+}
