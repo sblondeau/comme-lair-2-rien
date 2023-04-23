@@ -23,8 +23,7 @@ class Member
     #[Assert\Length(max: 80)]
     private ?string $firstName = null;
 
-    #[ORM\Column(length: 80)]
-    #[Assert\NotBlank()]
+    #[ORM\Column(length: 80, nullable: true)]
     #[Assert\Length(max: 80)]
     private ?string $lastName = null;
 
