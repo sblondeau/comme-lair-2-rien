@@ -11,8 +11,9 @@ nav {
 
 nav ul {
     padding-inline: var(--spacing);
-    padding-block-start: var(--spacing);
-    padding-block-end: 0;
+    padding-block: 0;
+    margin: 0;
+    padding-inline-end: var(--space2);
 }
 
 nav a {
@@ -47,6 +48,11 @@ nav details[role="list"] summary:not([role]) {
     border: none;
 }
 
+nav .close {
+    display: none;
+    align-self: flex-end;
+}
+
 @media screen and (width<760px) {
     nav .menu {
         display: initial;
@@ -54,6 +60,7 @@ nav details[role="list"] summary:not([role]) {
 
     nav .links {
         display: none;
+        padding-block-end: var(--space2);
     }
 
     nav .links:target {
@@ -63,5 +70,9 @@ nav details[role="list"] summary:not([role]) {
         gap: var(--space1);
         width: 100%;
         background-color: inherit;
+    }
+
+    nav .links:target .close {
+        display: inherit;
     }
 }

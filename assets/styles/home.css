@@ -23,11 +23,13 @@ header div {
 header h1 {
     font-size: calc(var(--font-size-title) * 2);
     margin: var(--spacing);
+    line-height: 100%;
 }
 
 header h2 {
     --color: var(--secondary);
     margin: var(--spacing);
+    margin-block-end: var(--space3);
 }
 
 
@@ -52,10 +54,16 @@ section:nth-child(even) {
     padding-inline-end: 0;
 }
 
-.presentation div {
+.presentation > div {
     padding-inline: var(--space3);
     --block-spacing-vertical: var(--space3);
     padding-block: var(--block-spacing-vertical);
+}
+
+.presentation > div > .content 
+{
+    max-height: 80vh;
+    overflow: auto;
 }
 
 /** section **/
