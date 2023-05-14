@@ -109,8 +109,7 @@ section:nth-child(even) {
 }
 
 .grid-section .grid>article img {
-    --card-img-height: 450px;
-    height: var(--card-img-height);
+    aspect-ratio: 3/4;
 }
 
 
@@ -118,29 +117,18 @@ section:nth-child(even) {
 /**** members ***/
 
 .members .grid {
-    --size: calc(100% / 6);
+    --breakpoint: 250px;
     --typography-spacing-vertical: 0;
 }
 
-.partners .grid {
-    --size: 0%;
-}
-
-.partners .grid figure {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
 
 .partners .grid figure img {
     display: flex;
     padding: var(--spacing);
     border-radius: 8px;
     width: 100%;
-    height: 200px;
     object-fit: contain;
 }
-
 
 .members .social {
     display: flex;
@@ -157,6 +145,16 @@ section:nth-child(even) {
 
 
 /**** partners ****/
+
+.partners .grid {
+    --size: 0%;
+}
+
+.partners .grid figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
 .partners .grid figure img {
     border-radius: 8px;

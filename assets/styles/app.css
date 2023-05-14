@@ -26,7 +26,6 @@
     --breakpoint: 360px;
 
     scroll-behavior: smooth;
-
 }
 
 
@@ -54,7 +53,6 @@ img {
 main img,
 header img {
     background: radial-gradient(circle, var(--light) 0%, var(--primary-light) 100%);
-    border: 1px solid transparent;
 }
 
 dialog:target {
@@ -70,11 +68,11 @@ dialog > article {
 }
 
 dialog.large-modal > article {
-    max-width: 65vw;
+    min-width: 65vw;
 }
 
 dialog img {
-    max-height: 60vh;
+    max-height: 75vh;
 }
 
 section {
@@ -87,6 +85,11 @@ article  {
 
 article h1, article h2 {
     --typography-spacing-vertical: var(--spacing);
+}
+
+:where(dl, ol, ul) {
+    padding-inline-start: 0;
+    list-style-position: inside;
 }
 
 @import url('navbar.css');
