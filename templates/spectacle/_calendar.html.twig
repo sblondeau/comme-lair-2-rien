@@ -1,6 +1,6 @@
 <article class="{{calendar.datetime < date('now') ? 'passed'}}">
 	<div>	
-		<h1>{{ calendar.datetime|date('d/m/Y H\hi') }}</h1>
+		<h1>{{ calendar.datetime|date('d/m/Y H\\hi') }}</h1>
 		<address>{{ calendar.address }}</address>
 		<a role="button" href="#calendar{{calendar.id}}">Plus d'information</a>
 	</div>
@@ -10,7 +10,7 @@
 	<article>
 		<header>
 			<a href="#close" aria-label="Close" class="close"></a>
-			<h2>{{ calendar.datetime|date('D/M/Y H\hi') }}</h2>
+			<h2>{{ calendar.datetime|date('d/m/Y H\\hi') }}</h2>
 			<address>{{ calendar.address }}</address>
 		</header>
 		<p>{{ calendar.information|raw|nl2br }}</p>
