@@ -22,10 +22,10 @@ services:
       - "traefik.http.routers.cadr-secure.entrypoints=websecure"
       # - "traefik.http.routers.${PROJECT_NAME:-project}-secure.rule=Host(`${PROJECT_NAME:-project}.${HOST:-localhost}`)"
       - "traefik.http.routers.cadr-secure.rule=Host(`commelair2rien.fr`)" 
-      - traefik.http.middlewares.limit.buffering.maxRequestBodyBytes=20000000
-      - traefik.http.middlewares.limit.buffering.memRequestBodyBytes=20000000
-      - traefik.http.middlewares.limit.buffering.maxResponseBodyBytes=20000000
-      - traefik.http.middlewares.limit.buffering.memResponseBodyBytes=20000000
+      - "traefik.http.middlewares.limit.buffering.maxRequestBodyBytes=20000000"
+      - "traefik.http.middlewares.limit.buffering.memRequestBodyBytes=20000000"
+      - "traefik.http.middlewares.limit.buffering.maxResponseBodyBytes=20000000"
+      - "traefik.http.middlewares.limit.buffering.memResponseBodyBytes=20000000"
   # mailer:
   #   image: mailhog/mailhog:latest
   #   container_name: ${PROJECT_NAME:-project}-mailhog
